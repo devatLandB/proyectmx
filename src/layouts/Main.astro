@@ -1,6 +1,11 @@
 ---
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+
+
+const { title } = Astro.props;
+const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
 ---
 
 
@@ -10,10 +15,11 @@ import Footer from "../components/Footer.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Proyect.mx</title>
+        <meta name="description" content={SITE_DESCRIPTION}>
+		<title>{SITE_TITLE} - {title}</title>
 	</head>
 	<body>
-        <div class="min-h-screen flex flex-col bg-no-repeat bg-cover" style="background-image: url('https://picsum.photos/id/10/2560/1600');">
+        <div class="min-h-screen flex flex-col bg-no-repeat bg-cover" style={bg1}>
             <header class="w-screen">
                 <Navbar />
             </header>
