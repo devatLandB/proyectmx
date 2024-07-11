@@ -1,0 +1,39 @@
+<div class="relative">
+    <!-- Fullscreen overlay navigation -->
+    <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transform translate-x-full transition-transform duration-300">
+        <div class="flex justify-end p-4">
+          <button id="close-btn" class="text-white text-2xl">&times;</button>
+        </div>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6 text-white text-xl">
+          <a href="/projects" class="overlay-link">Home</a>
+          <a href="/agencia" class="overlay-link">About</a>
+          <a href="#" class="overlay-link">Services</a>
+          <a href="#" class="overlay-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const overlay = document.getElementById('overlay');
+      const closeBtn = document.getElementById('close-btn');
+      const overlayLinks = document.querySelectorAll('.overlay-link');
+  
+      const openOverlay = () => {
+        overlay.classList.remove('translate-x-full');
+        overlay.classList.add('translate-x-0');
+      };
+  
+      const closeOverlay = () => {
+        overlay.classList.remove('translate-x-0');
+        overlay.classList.add('translate-x-full');
+      };
+  
+      hamburgerBtn.addEventListener('click', openOverlay);
+      closeBtn.addEventListener('click', closeOverlay);
+      overlayLinks.forEach(link => {
+        link.addEventListener('click', closeOverlay);
+      });
+    });
+  </script>

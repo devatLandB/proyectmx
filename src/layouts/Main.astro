@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
-
+import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
@@ -13,6 +13,7 @@ const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <ViewTransitions/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
         <meta name="description" content={SITE_DESCRIPTION}>

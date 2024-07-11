@@ -1,5 +1,4 @@
 ---
-import MenuModal from "./MenuModal.astro"
 import MenuModal2 from "./MenuModal2.astro"
 ---
 
@@ -12,6 +11,13 @@ import MenuModal2 from "./MenuModal2.astro"
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Proyect</span>
       </a>
       <!-- -->
+      <!-- Hamburger button -->
+      <button id="hamburger-btn" class="block md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+<!-- -->
       <button type="button" class="inline-flex float-right items-center p-2 w-10 h-10 justify-center text-sm xl:hidden hover:border" aria-controls="navbar-default" aria-expanded="false" data-modal-target="menu-modal" data-modal-toggle="menu-modal">
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -39,8 +45,5 @@ import MenuModal2 from "./MenuModal2.astro"
       </div>
     </div>
   </nav>
-  
 
-  <MenuModal2 />
-
-
+<MenuModal2/>
