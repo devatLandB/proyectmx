@@ -6,6 +6,7 @@ import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
+const footerBG = 'bg-transparent';
 ---
 
 
@@ -22,14 +23,14 @@ const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
 	<body>
         <div class="min-h-screen flex flex-col bg-no-repeat bg-cover" style={bg1}>
             <header class="w-screen">
-                <NavBar2/>
+                <NavBar2 client:load/>
             </header>
             <div class="flex-1 flex flex-col sm:flex-row">
                 <main class="flex-1">
                     <slot/>
                 </main>
             </div>
-            <footer class="w-screen">
+            <footer class={`${footerBG} w-screen`}>
                 <Footer/>
             </footer>
         </div>
