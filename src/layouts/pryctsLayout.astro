@@ -1,42 +1,37 @@
 ---
-import WhiteBG from "../../layouts/WhiteBG.astro";
-import Carousel from "../../components/Carousel.astro";
+import WhiteBG from "./WhiteBG.astro";
+import Carousel from "../components/Carousel.astro";
+
+const { frontmatter } = Astro.props;
+
 ---
 
 
 <WhiteBG title="Casa RA">
     <div class="border border-dashed border-red-500">
-        <Carousel/>
+        <Carousel carouselImg1={frontmatter.img1} carouselImg2={frontmatter.img2} carouselImg3={frontmatter.img3} carouselImg4={frontmatter.img4} carouselImg5={frontmatter.img5}/>
     </div>
     <div class="container mx-auto border border-dashed border-blue-500">
         <div class="py-12 px-4 md:px-0">
-            <p class="text-3xl">Some text</p>
-            <h1 class="text-6xl font-semibold">A Project</h1>
+            <p class="text-3xl">{frontmatter.title}</p>
+            <h1 class="text-6xl font-semibold">{frontmatter.proyect}</h1>
         </div>
         <div class="py-8 px-4 md:px-0">
             <div class="md:columns-2 columns-1 gap-5">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis veniam, corporis perferendis doloremque sint quod. Eveniet optio adipisci a officia iure veniam quia magni odio. Nihil sit corporis omnis esse!</p>
-
+                <slot/>
             </div>
             <div class="py-8">
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
                         <div class="w-40 mr-12">Location</div>
-                        <div class="font-bold">Paris, FR</div>
+                        <div class="font-bold">{frontmatter.location}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
                         <div class="w-40 mr-12">Typology</div>
-                        <div class="font-bold">Hotel</div>
+                        <div class="font-bold">{frontmatter.typology}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start">
                         <div class="w-40 mr-12">Date</div>
-                        <div class="font-bold">2021</div>
+                        <div class="font-bold">{frontmatter.date}</div>
                 </div>
                 
             </div>
