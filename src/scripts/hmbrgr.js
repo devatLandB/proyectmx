@@ -7,6 +7,7 @@
     const overlay = document.getElementById('overlay');
     const closeBtn = document.getElementById('close-btn');
     const overlayLinks = document.querySelectorAll('.overlay-link');
+    
 
     const openOverlay = () => {
       overlay.classList.remove('translate-x-full');
@@ -23,9 +24,25 @@
     overlayLinks.forEach(link => {
       link.addEventListener('click', closeOverlay);
       
-      // Check if the link href matches the current page path
+      
       if (link.href === window.location.href) {
         link.classList.add('text-blue-500'); 
       }
+      
+
     });
   });
+
+  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtns = document.querySelectorAll('.menu-btn a');
+    const currentUrl = window.location.pathname;
+
+    menuBtns.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (currentUrl === linkHref || currentUrl.startsWith(linkHref)) {
+            link.parentElement.classList.add('border-b-2', 'border-pryctblu');
+        }
+    });
+});

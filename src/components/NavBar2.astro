@@ -1,7 +1,7 @@
 <div class="max-w-screen-xl 2xl:max-w-screen-2xl flex flex-wrap items-center justify-start m-0 lg:mx-auto p-4 border border-dashed border-blue-500" transition:persist>
     <!-- LOGO -->
     <a href="/" class="flex-initial flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Proyect</span>
+      <span class="text-pryctblu self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Proyect</span>
     </a>
     <!-- Hamburger button -->
     <button id="hamburger-btn" class="text-gray-700 focus:outline-none flex-1 flex justify-end 2xl:hidden">
@@ -12,38 +12,38 @@
   
 
     <!-- 2XL MENU -->
-    <div class="hidden w-full 2xl:block md:w-auto mx-auto">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-16 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="/proyectos" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 uppercase">Proyectos</a>
-        </li>
-        <li>
-          <a href="/estudio" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Estudio</a>
-        </li>
-        <li>
-          <a href="/equipo" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Equipo</a>
-        </li>
-        <li>
-          <a href="/contacto" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Contacto</a>
+    <div id="menu-container" class="hidden w-full 2xl:block md:w-auto mx-auto">
+    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-16 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    <li class="menu-btn hover:border-b-2 border-blue-600 transition-all duration-75">
+      <a href="/proyectos" class="font-serif block py-2 px-3 text-pryctblu bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500 font-semibold text-xl transition-all hover:text-blue-600">Proyectos</a>
+    </li>
+    <li class="menu-btn hover:border-b-2 border-blue-600 transition-all duration-75">
+      <a href="/estudio" class="font-serif block py-2 px-3 text-pryctblu bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white md:dark:text-blue-500 font-semibold text-xl transition-all hover:text-blue-600">Estudio</a>
+    </li>
+    <li class="menu-btn hover:border-b-2 border-blue-600 transition-all duration-75">
+      <a href="/equipo" class="font-serif block py-2 px-3 text-pryctblu bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white md:dark:text-blue-500 font-semibold text-xl transition-all hover:text-blue-600">Equipo</a>
+    </li>
+        <li class="menu-btn hover:border-b-2 border-blue-600 transition-all duration-75">
+            <a href="/contacto" class="font-serif block py-2 px-3 text-pryctblu bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white md:dark:text-blue-500 font-semibold text-xl transition-all hover:text-blue-600">Contacto</a>
         </li>
         <li class="hidden">
-          <a href="/Noticias" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Noticias</a>
+          <a href="/Noticias" class="font-serif block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Noticias</a>
         </li>
       </ul>
     </div>
 
 
     <!-- Fullscreen overlay navigation -->
-    <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 transform translate-x-full transition-transform duration-300" transition:persist>
+    <div id="overlay" class="fixed inset-0 bg-pryctblu bg-opacity-95 z-50 transform translate-x-full transition-transform duration-300" transition:persist>
       <div class="flex justify-end p-4">
         <button id="close-btn" class="text-white text-6xl">&times;</button>
       </div>
       <nav class="flex flex-col items-center justify-start h-full space-y-6 text-white text-xl pt-8">
-        <a href="/" class="overlay-link text-3xl md:text-6xl py-6 uppercase">Inicio</a>
-        <a href="/proyectos" class="overlay-link text-3xl md:text-6xl py-6 uppercase">Proyectos</a>
-        <a href="/estudio" class="overlay-link text-3xl md:text-6xl py-6 uppercase">Estudio</a>
-        <a href="/equipo" class="overlay-link text-3xl md:text-6xl py-6 uppercase">Equipo</a>
-        <a href="/contacto" class="overlay-link text-3xl md:text-6xl py-6 uppercase">Contacto</a>
+        <a href="/" class="overlay-link text-3xl md:text-6xl py-6 ">Inicio</a>
+        <a href="/proyectos" class="overlay-link text-3xl md:text-6xl py-6 ">Proyectos</a>
+        <a href="/estudio" class="overlay-link text-3xl md:text-6xl py-6 ">Estudio</a>
+        <a href="/equipo" class="overlay-link text-3xl md:text-6xl py-6 ">Equipo</a>
+        <a href="/contacto" class="overlay-link text-3xl md:text-6xl py-6 ">Contacto</a>
         <!-- -->
           <ul class="container flex flex-row justify-center flex-wrap py-6 items-center">
             <li class="mx-5 flex">

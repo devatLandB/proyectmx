@@ -2,3 +2,24 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "flowbite";
+
+@font-face {
+    font-family: 'expansiva';
+    src: url('../../public/fonts/expansiva-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+body {
+    font-family: 'Plus Jakarta Sans Variable', sans-serif;
+  }
+
+  h1{
+    font-family: 'expansiva', sans-serif;
+  }
+
+  p{
+    font-family: 'Plus Jakarta Sans Variable', sans-serif;
+  }

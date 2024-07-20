@@ -1,6 +1,6 @@
 ---
 import WhiteBG from "./WhiteBG.astro";
-import Carousel from "../components/Carousel.astro";
+import Slider from "../components/Slider.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -9,29 +9,31 @@ const { frontmatter } = Astro.props;
 
 <WhiteBG title="Casa RA">
     <div class="border border-dashed border-red-500">
-        <Carousel carouselImg1={frontmatter.img1} carouselImg2={frontmatter.img2} carouselImg3={frontmatter.img3} carouselImg4={frontmatter.img4} carouselImg5={frontmatter.img5}/>
+      <div class="w-screen">
+        <Slider carouselImg1={frontmatter.img1} carouselImg2={frontmatter.img2} carouselImg3={frontmatter.img3} carouselImg4={frontmatter.img4} carouselImg5={frontmatter.img5}/>
+      </div>
     </div>
     <div class="container mx-auto border border-dashed border-blue-500">
         <div class="py-12 px-4 md:px-0">
-            <p class="text-3xl">{frontmatter.title}</p>
+            <p class="font-serif text-3xl">{frontmatter.title}</p>
             <h1 class="text-6xl font-semibold">{frontmatter.proyect}</h1>
         </div>
         <div class="py-8 px-4 md:px-0">
-            <div class="md:columns-2 columns-1 gap-5">
+            <div class="md:columns-2 columns-1 gap-5 font-serif">
                 <slot/>
             </div>
             <div class="py-8">
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12">Location</div>
-                        <div class="font-bold">{frontmatter.location}</div>
+                        <div class="w-40 mr-12 font-serif">Location</div>
+                        <div class="font-bold font-serif">{frontmatter.location}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12">Typology</div>
-                        <div class="font-bold">{frontmatter.typology}</div>
+                        <div class="w-40 mr-12 font-serif">Typology</div>
+                        <div class="font-bold font-serif">{frontmatter.typology}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start">
-                        <div class="w-40 mr-12">Date</div>
-                        <div class="font-bold">{frontmatter.date}</div>
+                        <div class="w-40 mr-12 font-serif">Date</div>
+                        <div class="font-bold font-serif">{frontmatter.date}</div>
                 </div>
                 
             </div>
@@ -41,7 +43,7 @@ const { frontmatter } = Astro.props;
     <!-- Other Projects -->
     <div class="md:px-0 bg-gray-100">
         <div class="container mx-auto">
-                <p class="p-4 font-semibold uppercase">Other Projects</p>
+                <p class="p-4 font-semibold uppercase font-serif">Other Projects</p>
                 <!-- -->
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8 p-4">
                 <a href="">
@@ -49,13 +51,13 @@ const { frontmatter } = Astro.props;
                         <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-white font-semibold">
                           <ul>
                             <li>
-                              <p class="text-base drop-shadow">Un Lugar</p>
+                              <p class="text-base drop-shadow font-serif">Un Lugar</p>
                             </li>
                             <li>
-                                <p class="text-2xl drop-shadow">El Nombre del Proyecto</p>
+                                <p class="text-2xl drop-shadow font-serif">El Nombre del Proyecto</p>
                               </li>
                             <li>
-                              <p class="text-base drop-shadow">2023</p>
+                              <p class="text-base drop-shadow font-serif">2023</p>
                             </li>
                           </ul>
                         </div>
@@ -110,3 +112,4 @@ const { frontmatter } = Astro.props;
     </div>
 
 </WhiteBG>
+

@@ -1,5 +1,5 @@
 
-import flowbitePlugin from 'flowbite/plugin'
+import flowbitePlugin from 'flowbite/plugin';
 
 export default {
 	content: [
@@ -7,7 +7,15 @@ export default {
 		'./node_modules/flowbite/**/*.js'
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors:{
+				'pryctblu': '#0E4879',
+			}
+		},
+		fontFamily: {
+			sans: ['expansiva'],
+			serif: ['Plus Jakarta Sans Variable'],
+		  },
 	},
 	plugins: [
 		flowbitePlugin
