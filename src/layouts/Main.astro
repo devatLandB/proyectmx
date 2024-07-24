@@ -5,7 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import '@fontsource-variable/plus-jakarta-sans';
 
 const { title } = Astro.props;
-const bg1 = 'background-image: url("https://picsum.photos/id/10/2560/1600")';
+const bg1 = 'background-image: url("./img/pic1.jpg")';
 const footerBG = 'bg-transparent';
 ---
 
@@ -21,8 +21,8 @@ const footerBG = 'bg-transparent';
         <link rel="stylesheet" href="../styles/global.css">
 	</head>
 	<body>
-        <div class="min-h-screen flex flex-col bg-no-repeat bg-cover" style={bg1}>
-            <header class="w-screen">
+        <div class="min-h-screen flex flex-col bg-no-repeat bg-cover bg-center" style={bg1}>
+            <header>
                 <NavBar2/>
             </header>
             <div class="flex-1 flex flex-col sm:flex-row">
@@ -30,7 +30,7 @@ const footerBG = 'bg-transparent';
                     <slot/>
                 </main>
             </div>
-            <footer class={`${footerBG} w-screen`}>
+            <footer class={footerBG}>
                 <Footer/>
             </footer>
         </div>
