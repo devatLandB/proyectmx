@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import '@fontsource-variable/plus-jakarta-sans';
 
 const { title } = Astro.props;
+const layoutLogo = "main";
 const bg1 = 'background-image: url("./img/pic1.jpg")';
 const footerBG = 'bg-transparent';
 ---
@@ -23,7 +24,7 @@ const footerBG = 'bg-transparent';
 	<body>
         <div class="min-h-screen flex flex-col bg-no-repeat bg-cover bg-center" style={bg1}>
             <header>
-                <NavBar2/>
+                <NavBar2 layoutLogo={layoutLogo}/>
             </header>
             <div class="flex-1 flex flex-col sm:flex-row">
                 <main class="flex-1">

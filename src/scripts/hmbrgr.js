@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
       link.addEventListener('click', toggleOverlay);
 
       // Correctly identify the current URL and add the 'text-blue-500' class
-      if (link.getAttribute('href') === window.location.pathname) {
-          link.classList.add('text-blue-500');
+      if (currentUrl === link.getAttribute('href') || currentUrl.startsWith(link.getAttribute('href') + '/')) {
+        link.classList.add('text-blue-500');
       }
   });
 
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // Add 'border-b-2' and 'border-pryctblu' classes to menu buttons if the link matches the current URL
   menuBtns.forEach(link => {
-      const linkHref = link.getAttribute('href');
-      if (currentUrl === linkHref || currentUrl.startsWith(linkHref)) {
-          link.parentElement.classList.add('border-b-2', 'border-pryctblu');
-      }
+    const linkHref = link.getAttribute('href');
+    if (currentUrl === linkHref || currentUrl.startsWith(linkHref + '/')) {
+      link.parentElement.classList.add('border-b-2', 'border-pryctblu');
+    }
   });
 });

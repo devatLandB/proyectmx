@@ -1,18 +1,19 @@
 ---
 import WhiteBG from "../layouts/WhiteBG.astro";
+const StdImg = './src/img/estudiobg2.jpg';
 ---
 
-<WhiteBG title="Estudio" altBG={`background-image: url("https://picsum.photos/id/20/2560/1600")`}>
+<WhiteBG title="Estudio" altBG={`background-image: url(${StdImg})`}>
     <!-- title -->
     <div class="flex container mx-auto border border-dashed border-pink-500">
         <div class="py-12">
-            <h1 class="font-serif text-4xl lg:text-6xl capitalize">Estudio</h1>
+            <h1 class="font-sans font-bold text-gray-300 text-4xl lg:text-6xl capitalize pl-4 md:pl-0">Estudio</h1>
         </div>
     </div>
     <!-- Section 1 -->
-    <div class="container mx-auto bg-slate-100 p-12">
+    <div class="container mx-auto bg-slate-100 p-12 pl-8 md:pl-0 mb-12">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-            <div class=" rounded-lg ">
+            <div class="px-4 rounded-lg ">
                 <p class="font-serif text-justify">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae doloribus dolorem assumenda? Nobis accusantium officia repellendus, illo incidunt voluptas numquam sunt placeat facere quidem maxime officiis pariatur aperiam nesciunt earum?
                     <br>
@@ -25,8 +26,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum eum pariatur consequatur incidunt laboriosam blanditiis nemo voluptate vitae. Numquam adipisci a ex quibusdam consequuntur pariatur laudantium, ipsa iste eaque corporis?
                 </p>
             </div>
-            <div class="rounded-lg">
-                <div class="relative pb-[56.25%] h-0 overflow-hidden">
+            <div class="">
+                <div class="relative pb-[56.25%] h-0 overflow-hidden mb-8">
                     <iframe
                       class="absolute top-0 left-0 w-full h-full"
                       src="https://www.youtube.com/embed/IlAFOdkmTDc?si=5mMvQIzaRTfYU1-v"
@@ -34,10 +35,12 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
                     ></iframe>
-                  </div>
+                </div>
+                <div class="relative pb-[56.25%] h-0 overflow-hidden">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src='https://my.matterport.com/show/?m=Fh5Cn1z486e' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
+                </div>
             </div>
           </div>
-        
     </div>
 </WhiteBG>
 

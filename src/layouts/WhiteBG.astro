@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import '@fontsource-variable/plus-jakarta-sans';
 const { title, altBG } = Astro.props;
+const layoutLogo = "bluLogo";
 const footerBG = 'bg-pryctblu';
 ---
 
@@ -24,7 +25,7 @@ const footerBG = 'bg-pryctblu';
 	<body>
         <div class="bg-no-repeat bg-cover min-h-screen flex flex-col" style={altBG}>
             <header class="max-w-screen">
-                <NavBar2/>
+                <NavBar2 layoutLogo={layoutLogo}/>
             </header>
             <div class="flex-1 flex flex-col sm:flex-row">
                 <main class="flex-1">

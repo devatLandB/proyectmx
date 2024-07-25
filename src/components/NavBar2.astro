@@ -1,10 +1,14 @@
+---
+const { layoutLogo } = Astro.props;
+---
+
 <div class="max-w-screen-xl 2xl:max-w-screen-2xl flex flex-wrap items-center justify-start m-0 lg:mx-auto p-4 border border-dashed border-blue-500" transition:persist>
     <!-- LOGO -->
     <a href="/" class="flex-initial flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="text-gray-300 self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Proyect</span>
+      <span class={`self-center text-2xl font-semibold whitespace-nowrap ${layoutLogo === 'main' ? 'text-gray-300' : 'text-pryctblu'}`}>Proyect</span>
     </a>
     <!-- Hamburger button -->
-    <button id="hamburger-btn" class="text-gray-300 focus:outline-none flex-1 flex justify-end">
+    <button id="hamburger-btn" class={`focus:outline-none flex-1 flex justify-end ${layoutLogo === 'main' ? 'text-gray-300' : 'text-pryctblu'}`}>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>

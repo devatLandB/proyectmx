@@ -1,9 +1,8 @@
 ---
 import WhiteBG from "./WhiteBG.astro";
 import Slider from "../components/Slider.astro";
-
+import PryctsGallery from "../components/PryctsGallery.astro";
 const { frontmatter } = Astro.props;
-
 ---
 
 
@@ -16,7 +15,7 @@ const { frontmatter } = Astro.props;
     <div class="container mx-auto border border-dashed border-blue-500">
         <div class="py-12 px-4 md:px-0">
             <p class="font-serif text-3xl">{frontmatter.title}</p>
-            <h1 class="text-6xl font-semibold">{frontmatter.proyect}</h1>
+            <h1 class="text-6xl font-semibold text-pryctblu">{frontmatter.proyect}</h1>
         </div>
         <div class="py-8 px-4 md:px-0">
             <div class="md:columns-2 columns-1 gap-5 font-serif">
@@ -38,6 +37,12 @@ const { frontmatter } = Astro.props;
                 
             </div>
         </div>
+    </div>
+    <div class="container mx-auto border border-dashed border-blue-500 pb-12">
+      <div class="py-4 px-4 md:px-0">
+        <p>Planos</p>
+      </div>
+        <PryctsGallery images={frontmatter.images} />
     </div>
     
     <!-- Other Projects -->
