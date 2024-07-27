@@ -1,12 +1,15 @@
 ---
 import WhiteBG from "../layouts/WhiteBG.astro";
+import { Image } from 'astro:assets';
+
+import pryct1 from '../img/proyectos/6.jpg';
 ---
 
 <WhiteBG title="Proyectos">
     <!-- title -->
     <div class="flex container mx-auto border border-dashed border-pink-500">
         <div class="py-12">
-            <h1 class="font-sans font-bold text-pryctblu text-4xl lg:text-6xl capitalize pl-4 md:pl-0">proyectos</h1>
+            <h1 class="font-sans font-bold text-pryctblu text-3xl lg:text-5xl capitalize pl-4 md:pl-0">proyectos</h1>
         </div>
     </div>
     <!-- Section 1 :: 1 BIG LEFT 2 SMall -->
@@ -19,18 +22,18 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                         <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-white font-semibold">
                           <ul>
                             <li>
-                              <p class="font-serif text-base drop-shadow">Un Lugar</p>
+                              <p class="font-serif text-base drop-shadow text-pryctblu">Un Lugar</p>
                             </li>
                             <li>
-                                <p class="font-serif text-2xl drop-shadow">Proyecto 1</p>
+                                <p class="font-sans text-2xl drop-shadow text-pryctblu">Proyecto 1</p>
                               </li>
                             <li>
-                              <p class="font-serif text-base drop-shadow">2023</p>
+                              <p class="font-serif text-base drop-shadow text-pryctblu">2023</p>
                             </li>
                           </ul>
                         </div>
                         <div class="bg-white-700">
-                            <img class="flex-1 h-auto max-w-full p-2 group-hover:opacity-70 duration-300" src="https://picsum.photos/1000/500" alt="" />
+                          <Image src={pryct1} alt="xmpl" class="flex-1 h-auto max-w-full p-2 group-hover:opacity-40 duration-300"/>
                         </div>
                       </div>
                     </a>
