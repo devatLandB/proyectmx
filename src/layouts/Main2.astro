@@ -1,0 +1,37 @@
+---
+import NavBar2 from "../components/NavBar3.astro";
+import Footer2 from "../components/Footer2.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import '@fontsource-variable/plus-jakarta-sans';
+
+const { title } = Astro.props;
+const bgImage = Astro.props.bgImage || '/default-bg.jpg';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <title>{SITE_TITLE} - {title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider/keen-slider.min.css">
+    <link rel="stylesheet" href="../styles/global.css">
+  </head>
+  <body class="min-h-screen flex flex-col bg-no-repeat bg-cover bg-center overflow-x-hidden" style={`background-image: url(${bgImage});`}>
+    <header class="relative">
+      <NavBar2 />
+    </header>
+    <main class="flex-1 w-screen">
+      <slot />
+    </main>
+    <footer class="relative">
+      <Footer2 />
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+    <script src="../scripts/hmbrgr.js"></script>
+    <script src="../scripts/slider2.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+  </body>
+</html>

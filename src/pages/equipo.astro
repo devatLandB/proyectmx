@@ -1,5 +1,8 @@
 ---
 import WhiteBG from "../layouts/WhiteBG.astro";
+
+import * as staff from "../pages/colaboradores/staff.md"; 
+
 ---
 
 <WhiteBG title="Proyectos">
@@ -18,8 +21,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="w-56 h-56 md:w-80 md:h-80 mb-4">
                       <img class="rounded-full w-full h-full object-cover" src="https://picsum.photos/600" alt="Team Member 1">
                     </div>
-                    <h3 class="font-serif text-xl font-semibold">Team Member 1</h3>
-                    <p class="text-gray-600 font-serif mb-4">Job Title 1</p>
+                    <h3 class="font-serif text-xl font-semibold">{staff.frontmatter.teamName1}</h3>
+                    <p class="text-gray-600 font-serif mb-4">{staff.frontmatter.jobTitle1}</p>
                   </div>
                   <!-- Acc1 -->
                   <div id="accordion-collapse" data-accordion="collapse">
@@ -35,10 +38,10 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                       <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                         <ul class="list-disc flex flex-col w-9/12 align-middle justify-center mx-auto">
                           <li>
-                            <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">Project Manager (Universidad Anáhuac).</p>
+                            <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc1_1}</p>
                           </li>
                           <li>
-                            <p class="font-serif text-sm text-gray-500 dark:text-gray-400">Six Sigma Yellow belt (Sigma Pro).</p>
+                            <p class="font-serif text-sm text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc2_1}</p>
                           </li>
                         </ul>
                       </div>
@@ -53,8 +56,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="w-56 h-56 md:w-80 md:h-80 mb-4">
                       <img class="rounded-full w-full h-full object-cover" src="https://picsum.photos/600" alt="Team Member 1">
                     </div>
-                    <h3 class="text-xl font-semibold font-serif">Team Member 2</h3>
-                    <p class="text-gray-600 font-serif mb-4">Job Title 2</p>
+                    <h3 class="text-xl font-semibold font-serif">{staff.frontmatter.teamName2}</h3>
+                    <p class="text-gray-600 font-serif mb-4">{staff.frontmatter.jobTitle2}</p>
                 </div>
                 <!-- Acc2 -->
                 <div id="accordion-collapse" data-accordion="collapse">
@@ -70,10 +73,10 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                       <ul class="list-disc flex flex-col w-9/12 align-middle justify-center mx-auto">
                         <li>
-                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">Project Manager (Universidad Anáhuac).</p>
+                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc1_2}</p>
                         </li>
                         <li>
-                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">Six Sigma Yellow belt (Sigma Pro).</p>
+                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc2_2}</p>
                         </li>
                       </ul>
                     </div>
@@ -92,8 +95,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                         <div class="w-36 h-36 md:w-56 md:h-56 mb-4">
                           <img class="rounded-full w-full h-full object-cover" src="https://picsum.photos/600" alt="Team Member 1">
                         </div>
-                        <h3 class="text-xl font-semibold font-serif">Team Member 3</h3>
-                        <p class="text-gray-600 font-serif mb-4">Job Title 3</p>
+                        <h3 class="text-xl font-semibold font-serif">{staff.frontmatter.teamName3}</h3>
+                        <p class="text-gray-600 font-serif mb-4">{staff.frontmatter.jobTitle3}</p>
                       </div>
                       <!-- Acc3 -->
                 <div id="accordion-collapse" data-accordion="collapse">
@@ -109,10 +112,10 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                       <ul class="list-disc flex flex-col w-9/12 align-middle justify-center mx-auto">
                         <li>
-                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">Project Manager (Universidad Anáhuac).</p>
+                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc1_3}</p>
                         </li>
                         <li>
-                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">Six Sigma Yellow belt (Sigma Pro).</p>
+                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc2_3}.</p>
                         </li>
                       </ul>
                     </div>
@@ -127,8 +130,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                         <div class="w-36 h-36 md:w-56 md:h-56 mb-4">
                           <img class="rounded-full w-full h-full object-cover" src="https://picsum.photos/600" alt="Team Member 1">
                         </div>
-                        <h3 class="text-xl font-semibold font-serif">Team Member 4</h3>
-                        <p class="text-gray-600 font-serif mb-4">Job Title 3</p>
+                        <h3 class="text-xl font-semibold font-serif">{staff.frontmatter.teamName4}</h3>
+                        <p class="text-gray-600 font-serif mb-4">{staff.frontmatter.jobTitle4}</p>
                       </div>
                       <!-- Acc4 -->
                 <div id="accordion-collapse" data-accordion="collapse">
@@ -144,10 +147,10 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                       <ul class="list-disc flex flex-col w-9/12 align-middle justify-center mx-auto">
                         <li>
-                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">Project Manager (Universidad Anáhuac).</p>
+                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc1_4}</p>
                         </li>
                         <li>
-                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">Six Sigma Yellow belt (Sigma Pro).</p>
+                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc2_4}.</p>
                         </li>
                       </ul>
                     </div>
@@ -161,8 +164,8 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                         <div class="w-36 h-36 md:w-56 md:h-56 mb-4">
                           <img class="rounded-full w-full h-full object-cover" src="https://picsum.photos/600" alt="Team Member 1">
                         </div>
-                        <h3 class="text-xl font-semibold font-serif">Team Member 5</h3>
-                        <p class="text-gray-600 font-serif mb-4">Job Title 3</p>
+                        <h3 class="text-xl font-semibold font-serif">{staff.frontmatter.teamName5}</h3>
+                        <p class="text-gray-600 font-serif mb-4">{staff.frontmatter.jobTitle5}</p>
                       </div>
                        <!-- Acc5 -->
                 <div id="accordion-collapse" data-accordion="collapse">
@@ -178,10 +181,10 @@ import WhiteBG from "../layouts/WhiteBG.astro";
                     <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                       <ul class="list-disc flex flex-col w-9/12 align-middle justify-center mx-auto">
                         <li>
-                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">Project Manager (Universidad Anáhuac).</p>
+                          <p class="font-serif text-sm mb-2 text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc1_5}</p>
                         </li>
                         <li>
-                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">Six Sigma Yellow belt (Sigma Pro).</p>
+                          <p class="font-serif text-sm text-gray-500 dark:text-gray-400">{staff.frontmatter.xprnc2_5}.</p>
                         </li>
                       </ul>
                     </div>

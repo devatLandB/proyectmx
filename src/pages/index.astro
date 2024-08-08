@@ -1,14 +1,21 @@
 ---
 import Main from "../layouts/Main.astro"
+
+const { frontmatter } = Astro.props;
+
+import * as pryctA from '../pages/proyectos/pryct-a.md';
+import pryctA1 from '../img/proyectos/proyecto-a/img-gllry/1.jpg';
 ---
 
 <Main title="Inicio">
+	
 	<div class="flex container mx-auto border border-dashed border-pink-500 h-[calc(93dvh)] ">
-			<div class="flex flex-col align-bottom justify-end pb-20 pl-8 md:pl-0">
+		<div class="flex flex-col align-bottom justify-end pb-20 pl-8 md:pl-0">
 				<div class="border border-dashed border-lime-500">
-					<h1 class="text-4xl text-white font-serif">Título de Proyecto</h1>
-					<h3 class="text-white font-serif uppercase mt-3">Ubicación del Proyecto</h3>
+					<h1 class="text-5xl text-white font-sans font-bold">{pryctA.frontmatter.proyect}</h1>
+					<h3 class="text-white font-serif uppercase mt-3">{pryctA.frontmatter.location}</h3>
 				</div>	
 			</div>
-	</div>
+		</div>
+	
 </Main>
