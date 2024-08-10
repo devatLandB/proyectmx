@@ -2,6 +2,7 @@
 import WhiteBG from "./WhiteBG.astro";
 import Slider from "../components/Slider.astro";
 import PryctsGallery from "../components/PryctsGallery.astro";
+import OtherProyects from "../components/OtherProyects.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -18,20 +19,20 @@ const { frontmatter } = Astro.props;
             <h1 class="text-5xl font-semibold text-pryctblu">{frontmatter.proyect}</h1>
         </div>
         <div class="py-8 px-4 md:px-0">
-            <div class="md:columns-2 columns-1 gap-5 font-serif text-justify">
+            <div class="md:columns-2 columns-1 gap-10 font-serif text-justify lg:pb-12">
                 <slot/>
             </div>
             <div class="py-8">
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12 font-serif">Location</div>
+                        <div class="w-40 mr-12 font-serif">Ubicación</div>
                         <div class="font-bold font-serif">{frontmatter.location}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12 font-serif">Typology</div>
+                        <div class="w-40 mr-12 font-serif">Tipo</div>
                         <div class="font-bold font-serif">{frontmatter.typology}</div>
                 </div>
                 <div class="w-100 flex flex-row flex-nowrap justify-start">
-                        <div class="w-40 mr-12 font-serif">Date</div>
+                        <div class="w-40 mr-12 font-serif">Fecha</div>
                         <div class="font-bold font-serif">{frontmatter.date}</div>
                 </div>
                 
@@ -40,81 +41,18 @@ const { frontmatter } = Astro.props;
     </div>
     <div class="container mx-auto border border-dashed border-blue-500 pb-12">
       <div class="py-4 px-4 md:px-0">
-        <p>Planos</p>
+        <p class="p-4 font-sans font-bold text-pryctblu">Planos</p>
       </div>
         <PryctsGallery images={frontmatter.images} />
     </div>
     
     <!-- Other Projects -->
     <div class="md:px-0 bg-gray-100">
-        <div class="container mx-auto">
-                <p class="p-4 font-semibold uppercase font-serif">Other Projects</p>
-                <!-- -->
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8 p-4">
-                <a href="">
-                    <div class="relative group">
-                        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-white font-semibold">
-                          <ul>
-                            <li>
-                              <p class="text-base drop-shadow font-serif">Un Lugar</p>
-                            </li>
-                            <li>
-                                <p class="text-2xl drop-shadow font-serif">El Nombre del Proyecto</p>
-                              </li>
-                            <li>
-                              <p class="text-base drop-shadow font-serif">2023</p>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="bg-white-700">
-                            <img class="flex-1 h-auto max-w-full p-2 group-hover:opacity-70 duration-300" src="https://picsum.photos/1000/500" alt="" />
-                        </div>
-                      </div>
-                </a>
-                <a href="">
-                    <div class="relative group">
-                        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-white font-semibold">
-                          <ul>
-                            <li>
-                              <p class="text-base drop-shadow">Un Lugar</p>
-                            </li>
-                            <li>
-                                <p class="text-2xl drop-shadow">El Nombre del Proyecto</p>
-                              </li>
-                            <li>
-                              <p class="text-base drop-shadow">2023</p>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="bg-white-700">
-                            <img class="flex-1 h-auto max-w-full p-2 group-hover:opacity-70 duration-300 " src="https://picsum.photos/1000/500" alt="" />
-                        </div>
-                      </div>
-                </a>
-                <a href="">
-                    <div class="relative group">
-                        <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-white font-semibold">
-                          <ul>
-                            <li>
-                              <p class="text-base drop-shadow">Un Lugar</p>
-                            </li>
-                            <li>
-                                <p class="text-2xl drop-shadow">El Nombre del Proyecto</p>
-                              </li>
-                            <li>
-                              <p class="text-base drop-shadow">2023</p>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="bg-white-700">
-                            <img class="flex-1 h-auto max-w-full p-2 group-hover:opacity-70 duration-300 " src="https://picsum.photos/1000/500" alt="" />
-                        </div>
-                      </div>
-                </a>
-                
-              </div>
-        </div>
-    </div>
-
+      <div class="container mx-auto">
+              <p class="p-4 font-bold uppercase font-sans text-pryctblu">M&aacute;s Proyectos</p>
+        <OtherProyects />
+      </div>
+    </div>  
+    <!-- // -->
 </WhiteBG>
 

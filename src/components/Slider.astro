@@ -4,22 +4,31 @@ const { carouselImg1, carouselImg2, carouselImg3, carouselImg4, carouselImg5 } =
 
 
 <div id="my-keen-slider" class="keen-slider">
-    <div class="arrow  arrow--left">
+    <div class="arrow ">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </div>
-    <div class="keen-slider__slide number-slide1 draggable-image" style={`background-image: url('${carouselImg1}')`}>1</div>
-    <div class="keen-slider__slide number-slide2 draggable-image" style={`background-image: url('${carouselImg2}')`}>2</div>
-    <div class="keen-slider__slide number-slide3 draggable-image" style={`background-image: url('${carouselImg3}')`}>3</div>
-    <div class="keen-slider__slide number-slide4 draggable-image" style={`background-image: url('${carouselImg4}')`}>4</div>
-    <div class="keen-slider__slide number-slide5 draggable-image" style={`background-image: url('${carouselImg5}')`}>5</div>
+    <div class="keen-slider__slide number-slide1 draggable-image" style={`background-image: url('${carouselImg1}')`}></div>
+    <div class="keen-slider__slide number-slide2 draggable-image" style={`background-image: url('${carouselImg2}')`}></div>
+    <div class="keen-slider__slide number-slide3 draggable-image" style={`background-image: url('${carouselImg3}')`}></div>
+    <div class="keen-slider__slide number-slide4 draggable-image" style={`background-image: url('${carouselImg4}')`}></div>
+    <div class="keen-slider__slide number-slide5 draggable-image" style={`background-image: url('${carouselImg5}')`}></div>
     <div class="arrow right-arrow">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </div>
 </div>
+
+<div class="slider-references">
+  <span class="slider-dot" data-slide="1"></span>
+  <span class="slider-dot" data-slide="2"></span>
+  <span class="slider-dot" data-slide="3"></span>
+  <span class="slider-dot" data-slide="4"></span>
+  <span class="slider-dot" data-slide="5"></span>
+</div>
+
 
 <style>
     [class^="number-slide"],
@@ -139,6 +148,27 @@ const { carouselImg1, carouselImg2, carouselImg3, carouselImg4, carouselImg5 } =
     right: 20px;
   }
 
+
+  .slider-references {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
 
 </style>
 

@@ -1,7 +1,10 @@
 ---
-import type Index from "../pages/index.astro";
-
 const { images } = Astro.props;
+
+interface Image {
+  src: string;
+  alt: string;
+}
 ---
 
 <style>
@@ -33,8 +36,8 @@ const { images } = Astro.props;
 </style>
 
 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-0">
-  {images.map((image, index) => (
-    <div class="cursor-pointer image-thumbnail" data-src={image.src} key={index}>
+  {images.map((image: Image, index: number) => (
+    <div class="cursor-pointer image-thumbnail border border-pryctblu  transition-all hover:contrast-50" data-src={image.src}>
       <img src={image.src} alt={image.alt} class="w-full h-36 object-cover" />
     </div>
   ))}
@@ -48,22 +51,26 @@ const { images } = Astro.props;
   document.addEventListener('DOMContentLoaded', () => {
     const thumbnails = document.querySelectorAll('.image-thumbnail');
     const popup = document.getElementById('image-popup');
-    const popupImage = document.getElementById('popup-image');
+    const popupImage = document.getElementById('popup-image') as HTMLImageElement | null;
 
-    const openPopup = (src) => {
-      popupImage.src = src;
-      popup.classList.add('visible');
+    const openPopup = (src: string) => {
+      if (popupImage && popup) {
+        popupImage.src = src;
+        popup.classList.add('visible');
+      }
     };
 
     thumbnails.forEach(thumbnail => {
-      thumbnail.addEventListener('click', (event) => {
-        const src = event.currentTarget.getAttribute('data-src');
-        openPopup(src);
+      thumbnail.addEventListener('click', (event: Event) => {
+        const src = (event.currentTarget as HTMLElement).getAttribute('data-src');
+        if (src) {
+          openPopup(src);
+        }
       });
     });
 
-    popup.addEventListener('click', () => {
-      popup.classList.remove('visible');
+    popup?.addEventListener('click', () => {
+      popup?.classList.remove('visible');
     });
   });
 </script>

@@ -1,21 +1,33 @@
 ---
-import Main from "../layouts/Main.astro"
+import Main from "../layouts/Main2.astro";
+import { projjects } from "../data/projects"; 
 
-const { frontmatter } = Astro.props;
-
-import * as pryctA from '../pages/proyectos/pryct-a.md';
-import pryctA1 from '../img/proyectos/proyecto-a/img-gllry/1.jpg';
+const bgImage = "/images/your-background.jpg";
 ---
 
-<Main title="Inicio">
-	
-	<div class="flex container mx-auto border border-dashed border-pink-500 h-[calc(93dvh)] ">
-		<div class="flex flex-col align-bottom justify-end pb-20 pl-8 md:pl-0">
-				<div class="border border-dashed border-lime-500">
-					<h1 class="text-5xl text-white font-sans font-bold">{pryctA.frontmatter.proyect}</h1>
-					<h3 class="text-white font-serif uppercase mt-3">{pryctA.frontmatter.location}</h3>
-				</div>	
-			</div>
-		</div>
-	
+<Main title="Inicio" bgImage={bgImage}>
+  <span class="saturate-75">
+  <div class="keen-slider h-screen">
+    {projjects.slice(0, 5).map((project, index) => (
+      <div class="keen-slider__slide bg-cover bg-center relative" style={`background-image: url(${project.image});`}>
+        <a href={project.link} class="cursor-pointer">
+          <div class="absolute bottom-10 left-0 p-8 text-white">
+            <h1 class="ml-4 text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-pryctblu hover:-translate-y-2 transition-all parallax-txt">{project.title}</h1>
+            <h3 class="ml-4 text-black font-bold font-serif uppercase mt-3">{project.location}</h3>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+  </span>
 </Main>
+
+<style>
+.parallax-txt {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}	
+.keen-slider__slide {
+  transition: transform 2s cubic-bezier(.51,.92,.24,1.15);
+}
+</style>

@@ -1,0 +1,79 @@
+---
+const images = [
+  { src: 'https://picsum.photos/id/54/1000/720', alt: 'Image 1' },
+  { src: 'https://picsum.photos/id/55/1000/720', alt: 'Image 2' },
+  { src: 'https://picsum.photos/id/56/1000/720', alt: 'Image 3' },
+  { src: 'https://picsum.photos/id/57/1000/720', alt: 'Image 4' },
+  // Add more images as needed
+];
+---
+
+<style>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 72, 121, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+  }
+
+  .overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .overlay img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+</style>
+
+<div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-8">
+  {images.map((image, index) => (
+    <div class="cursor-pointer image-thumbnail" data-src={image.src}>
+      <img src={image.src} alt={image.alt} class="w-full h-auto object-cover" />
+    </div>
+  ))}
+</div>
+
+<div id="image-popup" class="overlay">
+  <img id="popup-image" src="" alt="Popup Image" />
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const thumbnails = document.querySelectorAll<HTMLDivElement>('.image-thumbnail');
+  const popup = document.getElementById('image-popup') as HTMLElement | null;
+  const popupImage = document.getElementById('popup-image') as HTMLImageElement | null;
+
+  const openPopup = (src: string) => {
+    if (popupImage) {
+      popupImage.src = src;
+      popup?.classList.add('visible');
+    }
+  };
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', (event) => {
+      const target = event.currentTarget as HTMLDivElement | null;
+      const src = target?.getAttribute('data-src');
+      if (src) {
+        openPopup(src);
+      }
+    });
+  });
+
+  popup?.addEventListener('click', () => {
+    popup?.classList.remove('visible');
+  });
+});
+
+</script>

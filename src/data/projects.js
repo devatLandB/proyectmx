@@ -8,7 +8,8 @@ export const projjects = [
     {
       title: "Project 2",
       location: "Location 2",
-      image: "./src/img/proyectos/proyecto-a/img-gllry/2.jpg"
+      image: "./src/img/proyectos/proyecto-a/img-gllry/2.jpg",
+      link: "./proyectos/pryct-b"
     },
     {
       title: "Project 3",
