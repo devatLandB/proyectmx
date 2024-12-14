@@ -7,12 +7,12 @@ const bgImage = "/images/your-background.jpg";
 
 <Main title="Inicio" bgImage={bgImage}>
   <span class="saturate-75">
-  <div class="keen-slider h-screen">
+  <div class="keen-slider h-screen absolute top-0 left-0 w-full">
     {projjects.slice(0, 5).map((project, index) => (
-      <div class="keen-slider__slide bg-cover bg-center relative" style={`background-image: url(${project.image});`}>
+      <div class="keen-slider__slide bg-cover bg-center absolute" style={`background-image: url(${project.image});`}>
         <a href={project.link}>
           <div class="absolute bottom-10 left-0 p-8 text-white">
-            <h1 class="ml-4 text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-pryctblu hover:-translate-y-2 transition-all">{project.title}</h1>
+            <h1 class="ml-4 text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-pryctgray hover:-translate-y-2 transition-all">2{project.title}</h1>
             <h3 class="ml-4 text-black font-bold font-serif uppercase mt-3">{project.location}</h3>
           </div>
         </a>

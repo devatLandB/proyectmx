@@ -10,6 +10,8 @@ export default {
 		extend: {
 			colors:{
 				'pryctblu': '#0E4879',
+				'pryctgray': '#555555',
+				'pryctlightgray': '#696969',
 			}
 		},
 		fontFamily: {

@@ -1,0 +1,185 @@
+---
+const { images } = Astro.props;
+
+interface Image {
+  src: string;
+  alt: string;
+  title: string;
+}
+---
+<style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(85, 85, 85, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+  
+    .overlay.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+  
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+  
+    .gallery::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+  
+    .popup-navigation {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
+  
+    .popup-navigation.left {
+      left: 10px;
+    }
+  
+    .popup-navigation.right {
+      right: 10px;
+    }
+
+    .gallery-title {
+    font-size: 0.875rem; /* Tailwind equivalent to `text-sm` */
+    color: #6b7280; /* Tailwind equivalent to `text-gray-500` */
+    text-align: center;
+    margin-top: 0.5rem; /* Tailwind equivalent to `mt-2` */
+  }
+
+  .popup-title {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.25rem; /* Tailwind equivalent to `text-lg` */
+  }
+
+  </style>
+  
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-0">
+    {images.map((image: Image, index: number) => (
+      <div
+        class="cursor-pointer image-thumbnail border border-pryctgray transition-all hover:contrast-50"
+        data-src={image.src}
+        data-index={index}
+        data-title={image.title}
+      >
+        <img src={image.src} alt={image.alt} class="w-full h-36 object-fill" />
+        <div class="text-center text-sm text-pryctgray pt-2">{image.title}</div>
+      </div>
+    ))}
+  </div>
+  
+  <div id="image-popup" class="overlay">
+    <div class="popup-navigation left">&lt;</div>
+    <div class="text-center text-white absolute top-20 text-2xl" id="popup-title"></div>
+    <img id="popup-image" src="" alt="Popup Image" class="lg:w-[1024px]" />
+    <div class="popup-navigation right">&gt;</div>
+  </div>
+  
+
+  <script>
+    
+  document.addEventListener('DOMContentLoaded', () => {
+    const thumbnails = document.querySelectorAll('.image-thumbnail');
+    const popup = document.getElementById('image-popup');
+    const popupImage = document.getElementById('popup-image') as HTMLImageElement | null;
+    const popupTitle = document.getElementById('popup-title');
+    const leftNav = document.querySelector('.popup-navigation.left');
+    const rightNav = document.querySelector('.popup-navigation.right');
+    let currentIndex = 0;
+
+    const openPopup = (src: string, title: string, index: number) => {
+      if (popupImage && popup && popupTitle) {
+        popupImage.src = src;
+        popupTitle.textContent = title;
+        popup.classList.add('visible');
+        currentIndex = index;
+      }
+    };
+
+    const updatePopupImage = (index: number) => {
+      const targetThumbnail = thumbnails[index];
+      const targetImage = targetThumbnail?.getAttribute('data-src');
+      const targetTitle = targetThumbnail?.getAttribute('data-title');
+      if (targetImage && popupImage && popupTitle) {
+        popupImage.src = targetImage;
+        popupTitle.textContent = targetTitle || '';
+      }
+    };
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', (event: Event) => {
+        const src = (event.currentTarget as HTMLElement).getAttribute('data-src');
+        const title = (event.currentTarget as HTMLElement).getAttribute('data-title');
+        if (src) {
+          openPopup(src, title || '', index);
+        }
+      });
+    });
+
+    popup?.addEventListener('click', (event: Event) => {
+      if (event.target === popup) {
+        popup.classList.remove('visible');
+      }
+    });
+
+    leftNav?.addEventListener('click', (event: Event) => {
+      event.stopPropagation();
+      if (currentIndex > 0) {
+        currentIndex--;
+        updatePopupImage(currentIndex);
+      }
+    });
+
+    rightNav?.addEventListener('click', (event: Event) => {
+      event.stopPropagation();
+      if (currentIndex < thumbnails.length - 1) {
+        currentIndex++;
+        updatePopupImage(currentIndex);
+      }
+    });
+  });
+
+
+  </script>
+  
+
+

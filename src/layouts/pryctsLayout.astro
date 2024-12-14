@@ -1,7 +1,7 @@
 ---
 import WhiteBG from "./WhiteBG.astro";
 import Slider from "../components/Slider.astro";
-import PryctsGallery from "../components/PryctsGallery.astro";
+import PryctsGallery2 from "../components/PryctsGallery2.astro";
 import OtherProyects from "../components/OtherProyects.astro";
 const { frontmatter } = Astro.props;
 ---
@@ -14,45 +14,110 @@ const { frontmatter } = Astro.props;
       </div>
     </div>
     <div class="container mx-auto border border-dashed border-blue-500">
-        <div class="py-12 px-4 md:px-0">
-            <p class="font-serif text-2xl font-bold">{frontmatter.title}</p>
-            <h1 class="text-5xl font-semibold text-pryctblu">{frontmatter.proyect}</h1>
+        <div class="pt-4 px-4">
+          <p class="font-serif text-sm font-normal text-pryctlightgray"><a href="/proyectos">/&nbsp;proyectos</a>&nbsp;/&nbsp;{frontmatter.proyect}</p>
+        </div>
+        <div class="py-8 px-4 md:px-0">
+          <h1 class="text-5xl font-semibold text-pryctgray mb-3">{frontmatter.proyect}</h1>
+          <p class="font-serif text-2xl font-normal text-pryctlightgray">{frontmatter.title}</p>
         </div>
         <div class="py-8 px-4 md:px-0">
             <div class="md:columns-2 columns-1 gap-10 font-serif text-justify lg:pb-12">
                 <slot/>
             </div>
-            <div class="py-8">
-                <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12 font-serif">Ubicación</div>
-                        <div class="font-bold font-serif">{frontmatter.location}</div>
+            <div>
+              <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8 py-8">
+                <div class="relative group py-8">
+                  <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
+                    <div class="w-40 mr-12 font-serif text-pryctgray">Ubicación</div>
+                    <div class="font-bold font-serif">{frontmatter.location}</div>
+            </div>
+            <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
+                    <div class="w-40 mr-12 font-serif text-pryctgray">Tipo</div>
+                    <div class="font-bold font-serif">{frontmatter.typology}</div>
+            </div>
+            <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
+                    <div class="w-40 mr-12 font-serif text-pryctgray">A&ntilde;o</div>
+                    <div class="font-bold font-serif">{frontmatter.date}</div>
+            </div>
+            <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
+                    <div class="w-40 mr-12 font-serif text-pryctgray">&Aacute;rea</div>
+                    <div class="font-bold font-serif">{frontmatter.area}</div>
+            </div>  
+            <div class="w-100 flex flex-row flex-nowrap justify-start">
+                    <div class="w-40 mr-12 font-serif text-pryctgray">Predio</div>
+                    <div class="font-bold font-serif">{frontmatter.predio}</div>
+            </div>  
                 </div>
-                <div class="w-100 flex flex-row flex-nowrap justify-start pb-8">
-                        <div class="w-40 mr-12 font-serif">Tipo</div>
-                        <div class="font-bold font-serif">{frontmatter.typology}</div>
+                <div class="relative group py-8">
+                  <div class="inset-0 z-10 flex justify-center items-center text-center font-semibold">
+                    <div class="map-container">
+                      <iframe src={frontmatter.map} width="650" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
                 </div>
-                <div class="w-100 flex flex-row flex-nowrap justify-start">
-                        <div class="w-40 mr-12 font-serif">Fecha</div>
-                        <div class="font-bold font-serif">{frontmatter.date}</div>
-                </div>
-                
+              </div>
             </div>
         </div>
     </div>
     <div class="container mx-auto border border-dashed border-blue-500 pb-12">
       <div class="py-4 px-4 md:px-0">
-        <p class="p-4 font-sans font-bold text-pryctblu">Planos</p>
+        <p class="p-4 font-sans font-bold text-pryctgray">Planos</p>
       </div>
-        <PryctsGallery images={frontmatter.images} />
+        <PryctsGallery2 images={frontmatter.images} />
     </div>
     
     <!-- Other Projects -->
     <div class="md:px-0 bg-gray-100">
       <div class="container mx-auto">
-              <p class="p-4 font-bold uppercase font-sans text-pryctblu">M&aacute;s Proyectos</p>
+              <p class="p-4 font-bold font-sans text-pryctgray">M&aacute;s Proyectos</p>
         <OtherProyects />
       </div>
     </div>  
     <!-- // -->
 </WhiteBG>
 
+<style>
+  .map-container {
+  position: relative;
+  width: 100%; /* Full width */
+  padding-top: 56.25%; /* Aspect ratio: 16:9 */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-container {
+  width: 100%; /* Full width */
+  padding-top: 26.25%; /* Aspect ratio: 16:9 */
+}
+}
+
+@media only screen and (min-width: 640px) {
+  .map-container {
+  width: 100%; /* Full width */
+  padding-top: 56.25%; /* Aspect ratio: 16:9 */
+}
+}
+
+@media only screen and (min-width: 1024px) {
+  .map-container {
+  width: 100%; /* Full width */
+  padding-top: 56.25%; /* Aspect ratio: 16:9 */
+}
+}
+
+@media only screen and (min-width: 1280px) {
+  .map-container {
+  width: 100%; /* Full width */
+  padding-top: 36.25%; /* Aspect ratio: 16:9 */
+}
+}
+</style>

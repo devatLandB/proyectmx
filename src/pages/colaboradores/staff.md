@@ -2,7 +2,7 @@
 
 teamName1: "Ing. Ricardo Reyes"
 jobTitle1: "CEO/Fundador"
-teamPic1: ""
+teamPic1: "./src/img/equipo/xctv_prsn1.jpg"
 teamName1_mail: "mailto:mail@mail.com"
 teamName1_linkedin: ""
 teamName1_wa: ""

@@ -5,10 +5,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import '@fontsource-variable/plus-jakarta-sans';
 const { title, altBG } = Astro.props;
 const layoutLogo = "bluLogo";
-const footerBG = 'bg-pryctblu';
+const footerBG = 'bg-pryctlightgray';
+
+import { getLangFromUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
